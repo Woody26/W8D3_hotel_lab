@@ -32,6 +32,11 @@ export default {
       const index = this.bookings.findIndex(booking => booking._id === id);
       this.bookings.splice(index, 1);
     })
+
+    eventBus.$on('booking-updated', updatedBooking => {
+      const index = this.bookings.findIndex(booking => booking._id === updatedBooking._id);
+      this.bookings.splice(index, 1, updatedBooking);
+    })
   },
   methods: {
     fetchData(){

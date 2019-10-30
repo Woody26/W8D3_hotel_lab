@@ -5,11 +5,11 @@ db.bookings.insertMany([
   {
     guest_name: "Gary",
     guest_email: "gary@gmail.com",
-    checked_in: "Yes"
+    checked_in: true
   },
   {
     guest_name: "Colin",
     guest_email: "colin@gmail.com",
-    checked_in: "No"
+    checked_in: false
   }
 ]);

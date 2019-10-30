@@ -56,6 +56,27 @@ router.post('/', (req, res) => {
   });
 });
 
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const updatedData = req.body;
+  console.log("YO YO YO YO", updatedData);
+  delete updatedData._id;
+  collection
+  .findOneAndUpdate(
+    { _id: ObjectID(id)},
+    { $set: { "checked_in": updatedData.checked_in} },
+    {returnOriginal: false}
+  )
+  .then((result) => {
+    res.json(result.value)
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500);
+    res.json({ status: 500, error: err });
+  });
+})
+
 return router;
 
 

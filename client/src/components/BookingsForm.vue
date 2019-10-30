@@ -11,7 +11,7 @@
 </div>
 <div class="formWrap">
   <label for="checked_in">Checked In:</label>
-  <input type="text" name="checked_in" v-model="checked_in">
+  <input type="checkbox" name="checked_in" value="true" v-model="checked_in">
 </div>
 
 <input type="submit" value="Save" id="save">
@@ -28,7 +28,7 @@ export default {
     return {
       guest_name: "",
       guest_email: "",
-      checked_in: ""
+      checked_in: false
     }
   },
   methods: {
